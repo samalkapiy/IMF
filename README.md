@@ -16,8 +16,8 @@ Change the path by typing,
 Now that rappture is installed on this computer, 
  Type the following:
 
-* git clone http://github.com/samalkapiy/astr8300_rappture_sam.git
-* cd astr8300_rappture_sam
+* git clone http://github.com/samalkapiy/IMF.git
+* cd IMF
 * rappture
 
 Authors
