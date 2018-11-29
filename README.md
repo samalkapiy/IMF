@@ -22,7 +22,11 @@ Now that rappture is installed on this computer,
 
 <h2> Brief Introduction </h2>
 
-The Initial Mass Function(IMF) gives the fraction of stars with masses m to m+dm in a generation of stars at birth. This function is expressed as a <i> probabability density function</i>(pdf). There are different IMF's in literature over the years. 
+The Initial Mass Function(IMF) gives the fraction of stars with masses m to m+dm in a generation of stars at birth. This function is expressed as a <i> probabability density function</i>(pdf). There are different IMFs in literature over the years with some of the popular ones being Salpeter(1955), Kroupa(2002) and Chabrier(2003). 
+
+The standard normalization condition is:
+
+<int> </int>
 
 
 
