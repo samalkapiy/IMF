@@ -20,6 +20,15 @@ Now that rappture is installed on this computer,
 * cd IMF
 * rappture
 
+<h1> Introduction </h1>
+
+
+
+
+
+
+
+
 Authors
 -------
 
