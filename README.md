@@ -28,7 +28,7 @@ The standard normalization condition is:
 
 &int;<sub>m<sub>l</sub></sub><sup>m<sub>u</sub></sup> &xi;(m) dm = 1
 
-where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limit. 
+where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limit respectively.  
 
 
 
