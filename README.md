@@ -20,7 +20,7 @@ Now that rappture is installed on this computer,
 * cd IMF
 * rappture
 
-<h12> Brief Introduction </h2>
+<h2> Brief Introduction </h2>
 
 The Initial Mass Function(IMF) gives the fraction of stars with masses m to m+dm in a generation of stars at birth. This function is expressed as a <i> probabability density function</i>(pdf). There are different IMF's in literature over the years. 
 
