@@ -26,7 +26,7 @@ The Initial Mass Function(IMF) gives the fraction of stars with masses m to m+dm
 
 The standard normalization condition is:
 
-$int; &xi;(m)
+&int; &xi;(m)
 
 
 
