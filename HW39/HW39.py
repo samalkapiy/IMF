@@ -47,6 +47,7 @@ def main():
                'output.curve(result1).component.xy',
                '%g %g\n' % (x[i],sol[i][0]), append=1
               )
+<<<<<<< HEAD
 	
     x = np.linspace(xmin, xmax, npts)
     y = eval(formula)
@@ -61,6 +62,8 @@ def main():
                 '%g %g\n' % (x[i],y[i]), append=1
                 )
 
+=======
+>>>>>>> upstream/master
 
     root = optimize.brentq(f, xmin, xmax, args=(1,formula))
 

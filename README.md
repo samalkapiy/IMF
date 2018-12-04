@@ -20,6 +20,7 @@ Now that rappture is installed on this computer,
 * cd IMF
 * rappture
 
+<<<<<<< HEAD
 <h2> Brief Introduction </h2>
 
 The Initial Mass Function(IMF) gives the fraction of stars with masses m to m+dm in a generation of stars at birth. This function is expressed as a <i> probabability density function</i>(pdf). There are different IMFs in literature over the years with some of the popular ones being Salpeter(1955), Kroupa(2002) and Chabrier(2003). 
@@ -33,6 +34,12 @@ where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limit respec
 
 
 
+=======
+Math
+----
+
+Here are some symbols:  &alpha;, &beta;, &gamma;, and &delta;.  And here is a reaction:  <sup>12</sup>C + <sup>4</sup>He &rarr; <sup>16</sup>O + &gamma;.  And here is an equation:  <b>F</b> = m<b>a</b>.
+>>>>>>> upstream/master
 
 Authors
 -------
