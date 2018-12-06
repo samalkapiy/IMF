@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<run>
+    <tool>
+        <title>Root finding Calculator</title>
+        <about>Press Simulate to view results.</about>
+        <command>python @tool/compute_root.py @driver</command>
+    </tool>
+    <input>
+        <string id="formula">
+            <about>
+                <label>f(x)</label>
+                <hints>Example: 2*x + 1</hints>
+            </about>
+            <size>30x5</size>
+	    <default>x</default>
+        </string>
+     </input>
+</run>
