@@ -31,15 +31,12 @@ The standard normalization condition is:
 
 where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limit respectively.  
 
+<h2> Method </h2>
+
+In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This is a piecewise function for different mass ranges. 
 
 
 
-=======
-Math
-----
-
-Here are some symbols:  &alpha;, &beta;, &gamma;, and &delta;.  And here is a reaction:  <sup>12</sup>C + <sup>4</sup>He &rarr; <sup>16</sup>O + &gamma;.  And here is an equation:  <b>F</b> = m<b>a</b>.
->>>>>>> upstream/master
 
 Authors
 -------
