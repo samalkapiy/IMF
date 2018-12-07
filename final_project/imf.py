@@ -11,6 +11,7 @@ def f(y, x, b, formula):
 def calc(y,x,a,formula):
     return eval(formula) # y[0] is int f(x) from 0 to 0
 
+
 def main():
 
     # Get arguments
@@ -19,9 +20,9 @@ def main():
 
     #xmin = float(io.get('input.number(min).current'))
     #xmax = float(io.get('input.number(max).current'))
-    formula1 = io.get('input.string(formula).current')
-    formula2 = io.get('input.string(formula).current')
-    formula3 = io.get('input.string(formula).current')
+    formula1 = io.get('input.string(formula1).current')
+    formula2 = io.get('input.string(formula2).current')
+    formula3 = io.get('input.string(formula3).current')
     
 
     #integrating the function
@@ -32,8 +33,8 @@ def main():
     sol2 = odeint(calc, 0, [0.08,0.5], args=(1, formula2))
     ans2 = (0.08)*sol2[1]
 
-    sol3 = odeint(calc, 0, [0.5,100],args=(1,formula3))
-    ans3 = (0.08)*(0.5)sol3[1]
+    sol3 = odeint(calc, 0, [0.5,100], args=(1,formula3))
+    ans3 = (0.08)*(0.5)*sol3[1]
 
     # Get base string
 
@@ -52,7 +53,7 @@ def main():
     #my_str = '\nResult of ' + my_str_base +  ' in [' + str(0.01) + \
     #        ', ' + str(0.08) + '] is ' + str(sol[1])
 
-    my_str = '\n Result of' + str_tot + 'is' +str(N)
+    my_str = '\n Result of' + str_tot + 'is'  + str(N)
     
 
     io.put('output.string(result1).about.label', 'Total stars')
