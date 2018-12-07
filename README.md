@@ -35,13 +35,13 @@ where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limits respe
 
 In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This is a piecewise function for different mass ranges. 
 
-In the Kroupa IMF, for mass ranges between 0.01 Mo to 0.08 Mo, the IMF is &xi(m) = A m<sup>-0.3</sup> 
-for mass ranges between, 0.08 Mo to 0.5 Mo, this function is, &xi(m) = A (0.08) m<sup>-1.3</sup>
-for mass ranges between, 0.5 M0 to 100 Mo, the function is, &xi(m) = A (0.5) (0.08) m<sup>-2.3</sup>
+In the Kroupa IMF, for mass ranges between 0.01 Mo to 0.08 Mo, the IMF is &xi;(m) = A m<sup>-0.3</sup> 
+for mass ranges between, 0.08 Mo to 0.5 Mo, this function is, &xi;(m) = A (0.08) m<sup>-1.3</sup>
+for mass ranges between, 0.5 M0 to 100 Mo, the function is, &xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
 
 Where, A is the normalization constant. 
 
-In the tool.xml file, 3 inputs were created to type in the Initial mass function
+In the tool.xml file, 3 inputs were created to type in the piecewise Initial mass function. Each input also have two inputs to obtain the lower and upper mass limits.
 
 
 
