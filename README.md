@@ -43,7 +43,7 @@ Where, A is the normalization constant.
 
 In the tool.xml file, 3 inputs were created to type in the piecewise Initial mass function. Each input also have two inputs to obtain the lower and upper mass limits.
 
-
+The python code that is used for the tool.xml file is imf.py. In this file, these inputs are used and integrated over the whole mass range as shown in equation 2. To find the normalization constant(A), 1 was divided by the total value obtained by integrating over the whole mass range. 
 
 Authors
 -------
