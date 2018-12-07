@@ -9,7 +9,10 @@ Installation
 You will need a computer with [rappture](https://nanohub.org/infrastructure/rappture/) installed.
 
 You can do this by first logging on to AWS. Start an instance of the Webnucleo1 AMI.To log in type,
-* ssh -X -i "Samalka2.pem" ubuntu@ec2-18-234-137-202.compute-1.amazonaws.com  
+* ssh -X -i "Samalka2.pem" ubuntu@ec2-18-234-137-202.compute-1.amazonaws.com
+
+This is an example. The URL will change for different computers. 
+
 Change the path by typing, 
 * export PATH=$PATH:/usr/local/rappture/bin
 
@@ -18,6 +21,7 @@ Now that rappture is installed on this computer,
 
 * git clone http://github.com/samalkapiy/IMF.git
 * cd IMF
+* cd final_project
 * rappture
 
 <<<<<<< HEAD
@@ -35,9 +39,13 @@ where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limits respe
 
 In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This is a piecewise function for different mass ranges. 
 
-In the Kroupa IMF, for mass ranges between 0.01 Mo to 0.08 Mo, the IMF is &xi;(m) = A m<sup>-0.3</sup> 
-for mass ranges between, 0.08 Mo to 0.5 Mo, this function is, &xi;(m) = A (0.08) m<sup>-1.3</sup>
-for mass ranges between, 0.5 M0 to 100 Mo, the function is, &xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
+For mass ranges between:
+0.01 Mo <= m > 0.08 Mo:
+      *&xi;(m) = A m<sup>-0.3</sup> 
+0.08 Mo <= m > 0.5 Mo:
+      *&xi;(m) = A (0.08) m<sup>-1.3</sup>
+0.5 Mo <=m > 100 Mo:
+      *&xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
 
 Where, A is the normalization constant. 
 
