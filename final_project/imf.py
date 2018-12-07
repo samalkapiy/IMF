@@ -19,10 +19,12 @@ def imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3):
         return eval(formula2) * 0.08
     if m3_min <= m < m3_max:
         return eval(formula3) * 0.5 * 0.08
+
+# two arrays were created
+
 x=[]
 y=[]
-#y_axis=[]
-#x_axis=[]
+
 
 def main():
 
@@ -52,8 +54,6 @@ def main():
     sol3 = odeint(calc, 0, [m3_min,m3_max], args=(1, formula3))
     ans3 = (0.08)*(0.5)*sol3[1]
 
-    # Get base string
-
     N = ans1+ans2+ans3
     A=1/N
 
@@ -63,6 +63,10 @@ def main():
     
     io.put('output.string(result1).about.label', 'Normalization constant')
     io.put('output.string(result1).current', my_str)
+
+######################################################################
+################# plotting the Graph #################################
+
 
     io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
     io.put('output.curve(result2).yaxis.label','log(dN/dm)')
@@ -82,66 +86,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-
-###################################################################
-############## plotting the graph #################################
-'''
-    m = np.linspace(m1_min, m3_max, 1000)
-    x = m
-    y = imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3)
-
-    io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
-    io.put('output.curve(result2).yaxis.label','log(dN/dm)')
-    io.put('output.curve(result2).xaxis.label', 'log(m)')
-
-    for i in range(1000):
-        io.put(
-                'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
-                )
-
-'''
-'''
-    io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
-    io.put('output.curve(result2).yaxis.label','log(dN/dm)')
-    io.put('output.curve(result2).xaxis.label', 'log(m)')
-
-    m = np.arange(m1_min, m3_max, 0.01)
-    for i in range(len(m)):
-        y.append(imf(m[i],m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3))
-        x.append(m[i])
-
-        io.put(
-             'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
-                )
-
-
-'''
-
-
-
-
-    #my_str_base = 'int_0.01^0.08 (' + str(formula) + ') dx  ' 
-
-    # Get compute root of \int_0^x f(x') dx' - a
-
-    #root = optimize.brentq(
-    #           calc, xmin, xmax, args=(a,formula)
-    #       )
-
-    #my_str = '\nResult of ' + my_str_base +  ' in [' + str(0.01) + \
-    #        ', ' + str(0.08) + '] is ' + str(sol[1])
-
-    
-
-    # Check
-
-    #check = calc(root, a, formula)
-
-    #my_str2 = '\nCheck: ' + my_str_base + ' = ' + str(check[0])
-
-    #io.put('output.string(result2).about.label', 'check')
-    #io.put('output.string(result2).current', my_str2 )
-    #print(my_str2 + '\n')
 
