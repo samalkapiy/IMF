@@ -41,11 +41,11 @@ In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This i
 
 For mass ranges between:
 0.01 Mo <= m > 0.08 Mo:
-      *&xi;(m) = A m<sup>-0.3</sup> 
+      * &xi;(m) = A m<sup>-0.3</sup> 
 0.08 Mo <= m > 0.5 Mo:
-      *&xi;(m) = A (0.08) m<sup>-1.3</sup>
+      * &xi;(m) = A (0.08) m<sup>-1.3</sup>
 0.5 Mo <=m > 100 Mo:
-      *&xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
+      * &xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
 
 Where, A is the normalization constant. 
 
