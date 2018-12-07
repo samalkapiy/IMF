@@ -1,5 +1,6 @@
 import Rappture
 import sys
+import math
 from math import *
 import numpy as np
 from scipy.integrate import odeint
@@ -11,6 +12,17 @@ def f(y, x, b, formula):
 def calc(y,m,a,formula):
     return eval(formula) # y[0] is int f(x) from 0 to 0
 
+def imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3):
+    if m1_min <= m < m1_max:
+        return eval(formula1)
+    if m2_min <= m < m2_max:
+        return eval(formula2) * 0.08
+    if m3_min <= m < m3_max:
+        return eval(formula3) * 0.5 * 0.08
+x=[]
+y=[]
+#y_axis=[]
+#x_axis=[]
 
 def main():
 
@@ -47,6 +59,69 @@ def main():
 
     str_norm = 'Normalization constant'
 
+    my_str = '\n' + str_norm + ' is :'  + str(A)
+    
+    io.put('output.string(result1).about.label', 'Normalization constant')
+    io.put('output.string(result1).current', my_str)
+
+    io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
+    io.put('output.curve(result2).yaxis.label','log(dN/dm)')
+    io.put('output.curve(result2).xaxis.label', 'log(m)')
+
+    m = np.arange(m1_min, m3_max, 0.01)
+    for i in range(len(m)):
+        y.append(math.log(imf(m[i],m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3)))
+        x.append(math.log(m[i]))
+
+        io.put(
+             'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
+                )
+
+    Rappture.result(io)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+###################################################################
+############## plotting the graph #################################
+'''
+    m = np.linspace(m1_min, m3_max, 1000)
+    x = m
+    y = imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3)
+
+    io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
+    io.put('output.curve(result2).yaxis.label','log(dN/dm)')
+    io.put('output.curve(result2).xaxis.label', 'log(m)')
+
+    for i in range(1000):
+        io.put(
+                'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
+                )
+
+'''
+'''
+    io.put('output.curve(result2).about.label','Kroupa IMF plot',append=0)
+    io.put('output.curve(result2).yaxis.label','log(dN/dm)')
+    io.put('output.curve(result2).xaxis.label', 'log(m)')
+
+    m = np.arange(m1_min, m3_max, 0.01)
+    for i in range(len(m)):
+        y.append(imf(m[i],m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3))
+        x.append(m[i])
+
+        io.put(
+             'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
+                )
+
+
+'''
+
+
+
+
     #my_str_base = 'int_0.01^0.08 (' + str(formula) + ') dx  ' 
 
     # Get compute root of \int_0^x f(x') dx' - a
@@ -58,12 +133,7 @@ def main():
     #my_str = '\nResult of ' + my_str_base +  ' in [' + str(0.01) + \
     #        ', ' + str(0.08) + '] is ' + str(sol[1])
 
-    my_str = '\n' + str_norm + 'is'  + str(A)
     
-
-    io.put('output.string(result1).about.label', 'Normalization constant')
-    io.put('output.string(result1).current', my_str)
-    #print(my_str)
 
     # Check
 
@@ -74,9 +144,4 @@ def main():
     #io.put('output.string(result2).about.label', 'check')
     #io.put('output.string(result2).current', my_str2 )
     #print(my_str2 + '\n')
-
-    Rappture.result(io)
-
-if __name__ == "__main__":
-    main()
 
