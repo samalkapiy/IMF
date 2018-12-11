@@ -2,15 +2,26 @@ import Rappture
 import sys
 import math
 from math import *
+from sympy import *
 import numpy as np
 from scipy.integrate import odeint
 from scipy import optimize
 
-def f(y, x, b, formula):
-    return eval(formula)
+#def f(y, x, b, formula):
+#    return eval(formula)
 
 def calc(y,m,a,formula):
     return eval(formula) # y[0] is int f(x) from 0 to 0
+
+
+def calc2(y,m,formula4,formula1):
+    return eval(formula1)*eval(formula4)
+
+def calc3(y,m,formula4,formula2):
+    return 0.08 * eval(formula2)*eval(formula4)
+
+def calc4(y,m,formula4,formula3):
+    return 0.08 *0.5 *eval(formula3)*eval(formula4)
 
 def imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3):
     if m1_min <= m < m1_max:
@@ -19,6 +30,9 @@ def imf(m,m1_min,m1_max,m2_min,m2_max,m3_min,m3_max,formula1,formula2,formula3):
         return eval(formula2) * 0.08
     if m3_min <= m < m3_max:
         return eval(formula3) * 0.5 * 0.08
+
+
+
 
 # two arrays were created
 
@@ -40,10 +54,10 @@ def main():
     m3_max = float(io.get('input.number(m3_max).current'))
     formula1 = io.get('input.string(formula1).current')
     formula2 = io.get('input.string(formula2).current')
-    formula3 = io.get('input.string(formula3).current')
+    formula3 = io.get('input.string(formula3).current')        
+    formula4 = io.get('input.string(formula4).current')
     
-
-    #integrating the function
+    #integrating the function to normalize the initial mass function. A is the normalization constant. 
     
     sol1 = odeint(calc, 0, [m1_min,m1_max], args=(1, formula1))
     ans1 = sol1[1]
@@ -64,6 +78,29 @@ def main():
     io.put('output.string(result1).about.label', 'Normalization constant')
     io.put('output.string(result1).current', my_str)
 
+
+    #integrating the Input function(ex: mass) with the normalized Initial mass function. 
+
+    sol4 = odeint(calc2, 0, [m1_min,m1_max], args=(formula4,formula1))
+    ans4 = sol4[1]
+
+    sol5 = odeint(calc3, 0,  [m2_min,m2_max], args=(formula4,formula2))
+    ans5 = sol5[1]
+
+    sol6 = odeint(calc4, 0, [m3_min,m3_max], args=(formula4,formula3))
+    ans6 = sol6[1]
+
+    solution = A*(ans4+ans5+ans6)
+
+    str_avg = 'Average value of the function'
+
+    new_str = '\n' + str_avg + ' is :'  + str(solution)
+
+    io.put('output.string(result3).about.label', 'Average value of the input function')
+    io.put('output.string(result3).current', new_str)
+
+
+
 ######################################################################
 ################# plotting the Graph #################################
 
@@ -80,6 +117,8 @@ def main():
         io.put(
              'output.curve(result2).component.xy','%g %g\n' % (x[i],y[i]), append=1
                 )
+
+
 
     Rappture.result(io)
 
