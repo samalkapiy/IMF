@@ -8,7 +8,7 @@
     <input>
         <string id="formula1">
             <about>
-                <label>f(m)</label>
+                <label>P(m)</label>
                 <hints>Example: m**-0.3</hints>
             </about>
             <size>10x5</size>
@@ -30,7 +30,7 @@
         </number>
         <string id="formula2">
             <about>
-                <label>f(m)</label>
+                <label>P(m)</label>
                 <hints>Example: m**-1.3</hints>
             </about>
             <size>10x5</size>
@@ -52,7 +52,7 @@
         </number>
         <string id="formula3">
             <about>
-                <label>f(m)</label>
+                <label>P(m)</label>
                 <hints>Example: m**-2.3</hints>
             </about>
             <size>10x5</size>
@@ -71,6 +71,16 @@
                         <description>This is the upper mass limit.</description>
                 </about>
                 <default>100</default>
-        </number>
+	</number>
+	<string id="formula4">
+		<title>Enter a function to calculate the average using IMF</title>
+            <about>
+		    <label>f(m)</label>
+		    <description>This is the Input Function to calculate averages of mass,luminosity, etc. </description>
+                <hints>Example: m</hints>
+            </about>
+            <size>10x5</size>
+            <default> m</default>
+        </string>
     </input>
 </run>
