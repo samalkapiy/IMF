@@ -82,10 +82,11 @@ We know,
 
 &int; &xi;(m) dm = N
 
+<br>where, N is the fraction of stars in a particular mass range</br>
 since, &xi;(m) &prop; m<sup>-&alpha;</sup>
 
 dN/dm = m<sup>-&alpha;</sup>
-log<sub>10</sub>(dN/dm) = -&alpha; log<sub>10</sub>m
+<br>log<sub>10</sub>(dN/dm) = -&alpha; log<sub>10</sub>m </br>
 
 The quantity of log<sub>10</sub>(dN/dm) vs log<sub>10</sub>m was plotted and displayed as result 3. 
 
