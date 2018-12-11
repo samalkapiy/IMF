@@ -53,11 +53,31 @@ For mass ranges between,
 
 Where, A is the normalization constant. 
 
+<h3>Result 1 </h3>
+
 In the <b>tool.xml</b> file, 3 inputs were created to type in the piecewise Initial mass function. Each input also have two inputs to enter the lower and upper mass limits.
 
 The python code that is used for the tool.xml file is <b>imf.py.</b> In this file, these inputs are used and integrated over the whole mass range as shown in equation given below. To find the normalization constant(A), 1 was divided by the total value obtained by integrating over the whole mass range.
 
-A[&int;<sub>0.01</sub><sup>0.08</sup>m<sup>-0.3</sup> + &int;(0.08)<sub>0.08</sub><sup>0.5</sup>m<sup>-1.3</sup> + &int;(0.08)(0.5)<sub>0.5</sub><sup>100</sup>m<sup>-2.3</sup>] = 1
+A{&int;<sub>0.01</sub><sup>0.08</sup>m<sup>-0.3</sup> + (0.08) &int;<sub>0.08</sub><sup>0.5</sup>m<sup>-1.3</sup> + (0.08)(0.5) &int;<sub>0.5</sub><sup>100</sup>m<sup>-2.3</sup>} = 1
+
+The normalization constant is displayed in the drop down list in the GUI.
+
+<h3>Result 2</h3>
+
+From the GUI, a fourth function can be entered. This could be a function of mass like the Luminosity function or simply mass. Inorder to calculate the average value of the function that is entered into the GUI. 
+
+The integration looks like the following:
+
+<br>As an example, if the Function that is enetered is mass, then the average mass in a population of stars is given by:</br>
+
+<m> = A &int;<sub>m<sub>l</sub></sub><sup>m<sub>u</sub></sup> m &xi;(m) dm 
+
+This result is deplayed as the second result in the drop down list in the GUI.
+
+<h3>Result 3</h3>
+
+
 
 
 Authors
