@@ -42,8 +42,9 @@ where, m<sub>l</sub> and m<sub>u</sub> are the lower and upper mass limits respe
 In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This is a piecewise function for different mass ranges. 
 
 For mass ranges between,
-0.01 Mo <= m > 0.08 Mo:
+<br>0.01 Mo <= m > 0.08 Mo:</br>
       * &xi;(m) = A m<sup>-0.3</sup> 
+
 0.08 Mo <= m > 0.5 Mo:
       * &xi;(m) = A (0.08) m<sup>-1.3</sup>
 0.5 Mo <=m > 100 Mo:
