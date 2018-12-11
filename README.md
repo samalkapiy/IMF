@@ -43,18 +43,22 @@ In this project, the Initial Mass Function(IMF) by Kroupa(2002) was used. This i
 
 For mass ranges between,
 <br>0.01 Mo <= m > 0.08 Mo:</br>
-      * &xi;(m) = A m<sup>-0.3</sup> 
+       &xi;(m) = A m<sup>-0.3</sup> 
 
 0.08 Mo <= m > 0.5 Mo:
-      * &xi;(m) = A (0.08) m<sup>-1.3</sup>
+      <br> &xi;(m) = A (0.08) m<sup>-1.3</sup> </br>
+      
 0.5 Mo <=m > 100 Mo:
-      * &xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup>
+      <br> &xi;(m) = A (0.5) (0.08) m<sup>-2.3</sup> </br>
 
 Where, A is the normalization constant. 
 
-In the tool.xml file, 3 inputs were created to type in the piecewise Initial mass function. Each input also have two inputs to obtain the lower and upper mass limits.
+In the <b>tool.xml</b> file, 3 inputs were created to type in the piecewise Initial mass function. Each input also have two inputs to enter the lower and upper mass limits.
 
-The python code that is used for the tool.xml file is imf.py. In this file, these inputs are used and integrated over the whole mass range as shown in equation 2. To find the normalization constant(A), 1 was divided by the total value obtained by integrating over the whole mass range. 
+The python code that is used for the tool.xml file is <b>imf.py.</b> In this file, these inputs are used and integrated over the whole mass range as shown in equation given below. To find the normalization constant(A), 1 was divided by the total value obtained by integrating over the whole mass range.
+
+A[&int;<sub>0.01</sub><sup>0.08</sup>m<sup>-0.3</sup> + &int;(0.08)<sub>0.08</sub><sup>0.5</sup>m<sup>-1.3</sup> + &int;(0.08)(0.5)<sub>0.5</sub><sup>100</sup>m<sup>-2.3</sup>] = 1
+
 
 Authors
 -------
